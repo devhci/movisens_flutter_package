@@ -2,6 +2,13 @@ part of movisens;
 
 /// A Calculator.
 class MovisensSamplingPackage implements SamplingPackage{
+
+
+  static const String MOVISENS = "movisens";
+
+
+
+
   @override
   // TODO: implement common
   SamplingSchema get common => null;
@@ -31,6 +38,12 @@ class MovisensSamplingPackage implements SamplingPackage{
   @override
   void onRegister() {
     // TODO: implement onRegister
+
+    FromJsonFactory.registerFromJsonFunction(
+        "MovisensMeasure", MovisensMeasure.fromJsonFunction);
+
+
+
   }
 
 

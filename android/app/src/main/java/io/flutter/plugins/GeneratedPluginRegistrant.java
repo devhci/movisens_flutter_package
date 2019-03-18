@@ -8,6 +8,7 @@ import fr.g123k.deviceapps.DeviceAppsPlugin;
 import io.flutter.plugins.deviceinfo.DeviceInfoPlugin;
 import com.pauldemarco.flutterblue.FlutterBluePlugin;
 import cachet.sensors.light.LightPlugin;
+import com.example.movisensflutter.MovisensFlutterPlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import cachet.plugins.pedometer.PedometerPlugin;
 import cachet.plugins.screenstate.ScreenStatePlugin;
@@ -29,6 +30,7 @@ public final class GeneratedPluginRegistrant {
     DeviceInfoPlugin.registerWith(registry.registrarFor("io.flutter.plugins.deviceinfo.DeviceInfoPlugin"));
     FlutterBluePlugin.registerWith(registry.registrarFor("com.pauldemarco.flutterblue.FlutterBluePlugin"));
     LightPlugin.registerWith(registry.registrarFor("cachet.sensors.light.LightPlugin"));
+    MovisensFlutterPlugin.registerWith(registry.registrarFor("com.example.movisensflutter.MovisensFlutterPlugin"));
     PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
     PedometerPlugin.registerWith(registry.registrarFor("cachet.plugins.pedometer.PedometerPlugin"));
     ScreenStatePlugin.registerWith(registry.registrarFor("cachet.plugins.screenstate.ScreenStatePlugin"));
