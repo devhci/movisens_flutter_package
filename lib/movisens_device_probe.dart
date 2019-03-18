@@ -2,63 +2,59 @@ part  of movisens;
 
 class MovisensProbe extends StreamProbe{
 
-
-
-
-  MovisensProbe(StreamSubscription<dynamic> stream) : super(_subscription);
-
   Movisens _movisens;
- static   StreamSubscription<String> _subscription;
-  String address = 'unknown', name = 'unknown';
-  int weight, height, age;
+  static  Stream<Datum> _subscription;
+
+  MovisensProbe(Stream<Datum> stream) : super(_movisensStream);
 
 
-  address = '88:6B:0F:CD:E7:F2';// ECG4
+  @override
+  void initialize(Measure measure){
 
-  name = 'Sensor 02655';
-  weight = 100;
-  height = 180;
-  age = 25;
+    super.onInitialize(measure);
+    address = '88:6B:0F:CD:E7:F2';// ECG4
 
-  void onInitialize() {
-
+    name = 'Sensor 02655';
+    weight = 100;
+    height = 180;
+    age = 25;
 
     UserData userData = new UserData(
         weight, height, Gender.male, age, SensorLocation.chest, address, name);
 
-
-
-
-  }
-
-
-  StreamSubscription<dynamic> startListening() {
-
-    //address = '88:6B:0F:82:1D:33';// move4
-
-
+    _movisens = new Movisens(userData);
 
     try {
       _subscription = _movisens.movisensStream.listen(onData);
     } on MovisensException catch (exception) {
       print(exception);
     }
-    return _subscription;
+
   }
 
+ /* MovisensProbe() : super(_movisensStream);*/
 
+
+  Stream<Datum> get _movisensStream =>  _movisens.movisensStream;
+
+
+
+  void onData(Datum d)
+
+  {
+
+
+
+  }
 
 }
 
 
 
 
-String  onData(d) {
 
 
-  print(" onData_flutter: "+ "$d");
 
-  return d;
 
-}
+
 
