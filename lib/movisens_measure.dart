@@ -5,10 +5,16 @@ part of movisens;
 class MovisensMeasure extends Measure{
 
 
+  String address = 'unknown', deviceName = 'unknown';
+  int weight, height, age;
+  Gender gender;
+
+  String get getAddress => address;
+
   MovisensMeasure(MeasureType type,
 
-      {name,enabled})
-      : super(type);
+      {name,enabled,this.address,this.deviceName,this.height,this.weight})
+      : super(type,name:name,enabled:enabled);
 
 
   static Function get fromJsonFunction => _$MovisensMeasureFromJson;

@@ -1,27 +1,16 @@
 part of movisens;
 
 /// A Calculator.
-class MovisensSamplingPackage implements SamplingPackage{
-
-
+class MovisensSamplingPackage implements SamplingPackage {
   static const String MOVISENS = "movisens";
 
+  Probe create(String type) => (type == MOVISENS) ? MovisensProbe() : null;
 
-
+  List<String> get dataTypes => [MOVISENS];
 
   @override
   // TODO: implement common
   SamplingSchema get common => null;
-
-  @override
-  Probe create(String type) {
-    // TODO: implement create
-    return null;
-  }
-
-  @override
-  // TODO: implement dataTypes
-  List<String> get dataTypes => null;
 
   @override
   // TODO: implement light
@@ -37,16 +26,7 @@ class MovisensSamplingPackage implements SamplingPackage{
 
   @override
   void onRegister() {
-    // TODO: implement onRegister
-
     FromJsonFactory.registerFromJsonFunction(
         "MovisensMeasure", MovisensMeasure.fromJsonFunction);
-
-
-
   }
-
-
-
 }
-
