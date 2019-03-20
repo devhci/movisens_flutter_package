@@ -6,23 +6,32 @@ class MovisensDatum extends CARPDatum {
   MovisensDatum() : super();
 
   factory MovisensDatum.fromMap(Map<String, dynamic> map) {
-    if (map.containsKey("MetLevel")) return MovisensMETLevelDatum.fromMap(map["MetLevel"]);
+    if (map.containsKey("MetLevel"))
+      return MovisensMETLevelDatum.fromMap(map["MetLevel"]);
     if (map.containsKey("Met")) return MovisensMETDatum.fromMap(map["Met"]);
 
     if (map.containsKey("HR")) return MovisensHRDatum.fromMap(map["HR"]);
     if (map.containsKey("HRV")) return MovisensHRVDatum.fromMap(map["HRV"]);
-    if (map.containsKey("IsHrvValid")) return MovisensIsHrvValidDatum.fromMap(map["IsHrvValid"]);
-    if (map.containsKey("BodyPosition")) return MovisensBodyPositionDatum.fromMap(map["BodyPosition"]);
-    if (map.containsKey("StepCount")) return MovisensStepCountDatum.fromMap(map["StepCount"]);
-    if (map.containsKey("MovementAcceleration")) return MovisensMovementAccelerationDatum.fromMap(map["MovementAcceleration"]);
-    if (map.containsKey("TapMarker")) return MovisensTapMarkerDatum.fromMap(map["TapMarker"]);
-    if (map.containsKey("BatteryLevel")) return MovisensBatteryLevelDatum.fromMap(map["BatteryLevel"]);
-    if (map.containsKey("ConnectionStatus")) return MovisensConnectionStatusDatum.fromMap(map["ConnectionStatus"]);
-
+    if (map.containsKey("IsHrvValid"))
+      return MovisensIsHrvValidDatum.fromMap(map["IsHrvValid"]);
+    if (map.containsKey("BodyPosition"))
+      return MovisensBodyPositionDatum.fromMap(map["BodyPosition"]);
+    if (map.containsKey("StepCount"))
+      return MovisensStepCountDatum.fromMap(map["StepCount"]);
+    if (map.containsKey("MovementAcceleration"))
+      return MovisensMovementAccelerationDatum.fromMap(
+          map["MovementAcceleration"]);
+    if (map.containsKey("TapMarker"))
+      return MovisensTapMarkerDatum.fromMap(map["TapMarker"]);
+    if (map.containsKey("BatteryLevel"))
+      return MovisensBatteryLevelDatum.fromMap(map["BatteryLevel"]);
+    if (map.containsKey("ConnectionStatus"))
+      return MovisensConnectionStatusDatum.fromMap(map["ConnectionStatus"]);
 
     return MovisensDatum();
   }
 }
+
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensMETLevelDatum extends MovisensDatum {
   MovisensMETLevelDatum() : super();
@@ -48,10 +57,11 @@ class MovisensMETLevelDatum extends MovisensDatum {
 
   String vigorous;
 
-  factory MovisensMETLevelDatum.fromJson(Map<String, dynamic> json) => _$MovisensMETLevelDatumFromJson(json);
+  factory MovisensMETLevelDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensMETLevelDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensMETLevelDatumToJson(this);
-
 }
+
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensMovementAccelerationDatum extends MovisensDatum {
   String movementAcceleration;
@@ -69,8 +79,11 @@ class MovisensMovementAccelerationDatum extends MovisensDatum {
     return movementAccelerationDatum;
   }
 
-  factory MovisensMovementAccelerationDatum.fromJson(Map<String, dynamic> json) => _$MovisensMovementAccelerationDatumFromJson(json);
-  Map<String, dynamic> toJson() => _$MovisensMovementAccelerationDatumToJson(this);
+  factory MovisensMovementAccelerationDatum.fromJson(
+          Map<String, dynamic> json) =>
+      _$MovisensMovementAccelerationDatumFromJson(json);
+  Map<String, dynamic> toJson() =>
+      _$MovisensMovementAccelerationDatumToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
@@ -88,10 +101,11 @@ class MovisensTapMarkerDatum extends MovisensDatum {
     return tapMakerDatum;
   }
 
-  factory MovisensTapMarkerDatum.fromJson(Map<String, dynamic> json) => _$MovisensTapMarkerDatumFromJson(json);
+  factory MovisensTapMarkerDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensTapMarkerDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensTapMarkerDatumToJson(this);
-
 }
+
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensBatteryLevelDatum extends MovisensDatum {
   String batteryLevel;
@@ -106,9 +120,9 @@ class MovisensBatteryLevelDatum extends MovisensDatum {
 
     return batteryLevelDatum;
   }
-  factory MovisensBatteryLevelDatum.fromJson(Map<String, dynamic> json) => _$MovisensBatteryLevelDatumFromJson(json);
+  factory MovisensBatteryLevelDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensBatteryLevelDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensBatteryLevelDatumToJson(this);
-
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
@@ -125,7 +139,8 @@ class MovisensBodyPositionDatum extends MovisensDatum {
 
     return bodyPositionDatum;
   }
-  factory MovisensBodyPositionDatum.fromJson(Map<String, dynamic> json) => _$MovisensBodyPositionDatumFromJson(json);
+  factory MovisensBodyPositionDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensBodyPositionDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensBodyPositionDatumToJson(this);
 }
 
@@ -143,7 +158,8 @@ class MovisensMETDatum extends MovisensDatum {
 
     return metDatum;
   }
-  factory MovisensMETDatum.fromJson(Map<String, dynamic> json) => _$MovisensMETDatumFromJson(json);
+  factory MovisensMETDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensMETDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensMETDatumToJson(this);
 }
 
@@ -163,9 +179,9 @@ class MovisensHRDatum extends MovisensDatum {
     return hrDatum;
   }
 
-  factory MovisensHRDatum.fromJson(Map<String, dynamic> json) => _$MovisensHRDatumFromJson(json);
+  factory MovisensHRDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensHRDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensHRDatumToJson(this);
-
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
@@ -183,9 +199,9 @@ class MovisensHRVDatum extends MovisensDatum {
 
     return hrvDatum;
   }
-  factory MovisensHRVDatum.fromJson(Map<String, dynamic> json) => _$MovisensHRVDatumFromJson(json);
+  factory MovisensHRVDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensHRVDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensHRVDatumToJson(this);
-
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
@@ -202,9 +218,9 @@ class MovisensIsHrvValidDatum extends MovisensDatum {
 
     return isHrvValidDatum;
   }
-  factory MovisensIsHrvValidDatum.fromJson(Map<String, dynamic> json) => _$MovisensIsHrvValidDatumFromJson(json);
+  factory MovisensIsHrvValidDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensIsHrvValidDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensIsHrvValidDatumToJson(this);
-
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
@@ -222,27 +238,28 @@ class MovisensStepCountDatum extends MovisensDatum {
 
     return stepCountDatum;
   }
-  factory MovisensStepCountDatum.fromJson(Map<String, dynamic> json) => _$MovisensStepCountDatumFromJson(json);
+  factory MovisensStepCountDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensStepCountDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensStepCountDatumToJson(this);
 }
 
-
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensConnectionStatusDatum extends MovisensDatum {
-  String connectionStatus ;
+  String connectionStatus;
 
   MovisensConnectionStatusDatum() : super();
 
   factory MovisensConnectionStatusDatum.fromMap(String value) {
-    MovisensConnectionStatusDatum connectionStatusDatum = MovisensConnectionStatusDatum();
+    MovisensConnectionStatusDatum connectionStatusDatum =
+        MovisensConnectionStatusDatum();
 
     Map<dynamic, dynamic> map = jsonDecode(value);
     connectionStatusDatum.movisensTimestamp = map['timestamp'];
-    connectionStatusDatum.connectionStatus  = map['step_count'];
+    connectionStatusDatum.connectionStatus = map['step_count'];
 
     return connectionStatusDatum;
   }
-  factory MovisensConnectionStatusDatum.fromJson(Map<String, dynamic> json) => _$MovisensConnectionStatusDatumFromJson(json);
+  factory MovisensConnectionStatusDatum.fromJson(Map<String, dynamic> json) =>
+      _$MovisensConnectionStatusDatumFromJson(json);
   Map<String, dynamic> toJson() => _$MovisensConnectionStatusDatumToJson(this);
-
 }
