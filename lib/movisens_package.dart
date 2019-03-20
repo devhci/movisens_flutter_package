@@ -4,6 +4,7 @@ part of movisens;
 class MovisensSamplingPackage implements SamplingPackage {
   static const String MOVISENS = "movisens";
 
+
   Probe create(String type) => (type == MOVISENS) ? MovisensProbe() : null;
 
   List<String> get dataTypes => [MOVISENS];
