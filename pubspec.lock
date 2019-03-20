@@ -112,7 +112,7 @@ packages:
       name: carp_mobile_sensing
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.7"
+    version: "0.3.9"
   charcode:
     dependency: transitive
     description:
@@ -142,7 +142,7 @@ packages:
     source: hosted
     version: "0.3.2"
   convert:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: convert
       url: "https://pub.dartlang.org"
@@ -345,7 +345,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: bc6e4cc3dce9ff20c075c7ba734d332f4f8870c3
+      resolved-ref: e77b40959abe844fb4c472e20e265376e35f59a9
       url: "https://github.com/devhci/movisens_plugin.git"
     source: git
     version: "0.1.1"
@@ -486,7 +486,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.4"
+    version: "1.5.5"
   stack_trace:
     dependency: transitive
     description:
@@ -600,5 +600,5 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.1.1-dev.0.0 <3.0.0"
+  dart: ">=2.2.0 <3.0.0"
   flutter: ">=0.1.4 <2.0.0"
