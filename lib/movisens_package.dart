@@ -33,5 +33,5 @@ class MovisensSamplingPackage implements SamplingPackage {
         "MovisensMeasure", MovisensMeasure.fromJsonFunction);
 
     print("inside register MovisnesMeasure");
-  }
+}
 }

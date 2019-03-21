@@ -74,6 +74,30 @@ const _$GenderEnumMap = <Gender, dynamic>{
   Gender.female: 'female'
 };
 
+MovisensDatum _$MovisensDatumFromJson(Map<String, dynamic> json) {
+  return MovisensDatum()
+    ..id = json['id'] as String
+    ..timestamp = json['timestamp'] == null
+        ? null
+        : DateTime.parse(json['timestamp'] as String)
+    ..movisensTimestamp = json['movisens_timestamp'] as String;
+}
+
+Map<String, dynamic> _$MovisensDatumToJson(MovisensDatum instance) {
+  var val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('id', instance.id);
+  writeNotNull('timestamp', instance.timestamp?.toIso8601String());
+  writeNotNull('movisens_timestamp', instance.movisensTimestamp);
+  return val;
+}
+
 MovisensMETLevelDatum _$MovisensMETLevelDatumFromJson(
     Map<String, dynamic> json) {
   return MovisensMETLevelDatum()

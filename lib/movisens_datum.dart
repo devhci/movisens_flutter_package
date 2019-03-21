@@ -1,5 +1,6 @@
 part of movisens;
 
+@JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensDatum extends CARPDatum {
 
   static const DataFormat CARP_DATA_FORMAT = DataFormat(NameSpace.CARP, MovisensSamplingPackage.MOVISENS);
