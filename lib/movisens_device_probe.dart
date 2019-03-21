@@ -1,17 +1,16 @@
 part of movisens;
 
-UserData userData = UserData(100, 180, Gender.male, 25, SensorLocation.chest,
-    '88:6B:0F:CD:E7:F2', 'Sensor 02655');
-Movisens _movisens = new Movisens(userData);
 
 class MovisensProbe extends StreamProbe {
-  static Stream<String> _stream;
+
   UserData userData;
+  Movisens _movisens;
+
 
   String address = 'unknown', name = 'unknown';
   int weight, height, age;
 
-  MovisensProbe() : super(_movisenStream);
+  MovisensProbe() : super();
 
   // MovisensProbe(Stream<String> stream) : super(_stream);
 
@@ -20,10 +19,10 @@ class MovisensProbe extends StreamProbe {
     assert(measure is MovisensMeasure);
     MovisensMeasure m = measure as MovisensMeasure;
 
-     userData = UserData(100, 180, Gender.male, 25, SensorLocation.chest,
+   UserData  userData = UserData(100, 180, Gender.male, 25, SensorLocation.chest,
         '88:6B:0F:CD:E7:F2', 'Sensor 02655');
      
-     print("inside measure");
+     print("inside probe");
 
   /* userData = new UserData(m.weight, m.height, m.gender, m.age,
       SensorLocation.chest, m.address, m.name);
@@ -44,7 +43,11 @@ class MovisensProbe extends StreamProbe {
 
 /*Future<Stream<MovisensDatum>> get _movsensStream async => _stream;*/
   }
+
+
+  Stream<MovisensDatum> get stream =>
+      _movisens.movisensStream.map((event) => MovisensDatum.fromMap(event));
+
+
 }
 
-Stream<MovisensDatum> get _movisenStream =>
-    _movisens.movisensStream.map((event) => MovisensDatum.fromMap(event));
