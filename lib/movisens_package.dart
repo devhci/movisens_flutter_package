@@ -27,7 +27,11 @@ class MovisensSamplingPackage implements SamplingPackage {
 
   @override
   void onRegister() {
+
+
     FromJsonFactory.registerFromJsonFunction(
         "MovisensMeasure", MovisensMeasure.fromJsonFunction);
+
+    print("inside register MovisnesMeasure");
   }
 }
