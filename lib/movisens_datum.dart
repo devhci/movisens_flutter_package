@@ -261,7 +261,7 @@ class MovisensConnectionStatusDatum extends MovisensDatum {
 
     Map<dynamic, dynamic> map = jsonDecode(value);
     connectionStatusDatum.movisensTimestamp = map['timestamp'];
-    connectionStatusDatum.connectionStatus = map['step_count'];
+    connectionStatusDatum.connectionStatus = map['connection_status'];
 
     return connectionStatusDatum;
   }
