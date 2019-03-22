@@ -345,7 +345,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: e77b40959abe844fb4c472e20e265376e35f59a9
+      resolved-ref: "1e66cd471219e8ded80874f0b23def5a2cd81ca7"
       url: "https://github.com/devhci/movisens_plugin.git"
     source: git
     version: "0.1.1"
