@@ -2,9 +2,11 @@ part of movisens;
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensMeasure extends Measure {
-  String address = 'unknown', deviceName = 'unknown', sensorLocation= "chest";
+  String address , deviceName ;
+
   int weight, height, age;
   Gender gender;
+  SensorLocation sensorLocation;
 
   String get getAddress => address;
 

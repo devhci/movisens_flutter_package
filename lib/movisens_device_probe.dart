@@ -19,8 +19,11 @@ class MovisensProbe extends StreamProbe {
     assert(measure is MovisensMeasure);
     MovisensMeasure m = measure as MovisensMeasure;
 
-   UserData  userData = UserData(100, 180, Gender.male, 25, SensorLocation.chest,
-        '88:6B:0F:CD:E7:F2', 'Sensor 02655');
+  /* UserData  userData = UserData(100, 180, Gender.male, 25, SensorLocation.chest,
+        '88:6B:0F:CD:E7:F2', 'Sensor 02655');*/
+
+    UserData  userData = UserData(m.weight, m.height, m.gender, m.age, m.sensorLocation,
+        m.address, m.deviceName);
      
      print("inside probe");
     _movisens = new Movisens(userData);

@@ -14,7 +14,8 @@ MovisensMeasure _$MovisensMeasureFromJson(Map<String, dynamic> json) {
       name: json['name'],
       enabled: json['enabled'],
       address: json['address'] as String,
-      sensorLocation: json['sensor_location'] as String,
+      sensorLocation: _$enumDecodeNullable(
+          _$SensorLocationEnumMap, json['sensor_location']),
       gender: _$enumDecodeNullable(_$GenderEnumMap, json['gender']),
       deviceName: json['device_name'] as String,
       height: json['height'] as int,
@@ -41,11 +42,12 @@ Map<String, dynamic> _$MovisensMeasureToJson(MovisensMeasure instance) {
   writeNotNull('configuration', instance.configuration);
   writeNotNull('address', instance.address);
   writeNotNull('device_name', instance.deviceName);
-  writeNotNull('sensor_location', instance.sensorLocation);
   writeNotNull('weight', instance.weight);
   writeNotNull('height', instance.height);
   writeNotNull('age', instance.age);
   writeNotNull('gender', _$GenderEnumMap[instance.gender]);
+  writeNotNull(
+      'sensor_location', _$SensorLocationEnumMap[instance.sensorLocation]);
   return val;
 }
 
@@ -68,6 +70,20 @@ T _$enumDecodeNullable<T>(Map<T, dynamic> enumValues, dynamic source) {
   }
   return _$enumDecode<T>(enumValues, source);
 }
+
+const _$SensorLocationEnumMap = <SensorLocation, dynamic>{
+  SensorLocation.left_ankle: 'left_ankle',
+  SensorLocation.left_hip: 'left_hip',
+  SensorLocation.left_thigh: 'left_thigh',
+  SensorLocation.left_upper_arm: 'left_upper_arm',
+  SensorLocation.left_wrist: 'left_wrist',
+  SensorLocation.right_ankle: 'right_ankle',
+  SensorLocation.right_hip: 'right_hip',
+  SensorLocation.right_thigh: 'right_thigh',
+  SensorLocation.right_upper_arm: 'right_upper_arm',
+  SensorLocation.right_wrist: 'right_wrist',
+  SensorLocation.chest: 'chest'
+};
 
 const _$GenderEnumMap = <Gender, dynamic>{
   Gender.male: 'male',
