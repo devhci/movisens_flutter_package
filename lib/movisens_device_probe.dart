@@ -6,9 +6,9 @@ class MovisensProbe extends StreamProbe {
   UserData userData;
   Movisens _movisens;
 
-
+/*
   String address = 'unknown', name = 'unknown';
-  int weight, height, age;
+  int weight, height, age;*/
 
   MovisensProbe() : super();
 

@@ -11,7 +11,7 @@ class MovisensMeasure extends Measure {
   String get getAddress => address;
 
   MovisensMeasure(MeasureType type,
-      {name, enabled, this.address,this.sensorLocation, this.gender, this.deviceName, this.height, this.weight})
+      {name, enabled, this.address,this.sensorLocation, this.gender, this.deviceName, this.height, this.weight,this.age})
       : super(type, name: name, enabled: enabled);
 
   static Function get fromJsonFunction => _$MovisensMeasureFromJson;

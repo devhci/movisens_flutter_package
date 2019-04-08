@@ -19,11 +19,11 @@ MovisensMeasure _$MovisensMeasureFromJson(Map<String, dynamic> json) {
       gender: _$enumDecodeNullable(_$GenderEnumMap, json['gender']),
       deviceName: json['device_name'] as String,
       height: json['height'] as int,
-      weight: json['weight'] as int)
+      weight: json['weight'] as int,
+      age: json['age'] as int)
     ..c__ = json['c__'] as String
     ..configuration = (json['configuration'] as Map<String, dynamic>)
-        ?.map((k, e) => MapEntry(k, e as String))
-    ..age = json['age'] as int;
+        ?.map((k, e) => MapEntry(k, e as String));
 }
 
 Map<String, dynamic> _$MovisensMeasureToJson(MovisensMeasure instance) {
