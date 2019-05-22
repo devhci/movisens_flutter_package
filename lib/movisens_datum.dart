@@ -2,10 +2,9 @@ part of movisens;
 
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensDatum extends CARPDatum {
-
-  static const DataFormat CARP_DATA_FORMAT = DataFormat(NameSpace.CARP, MovisensSamplingPackage.MOVISENS);
+  static const DataFormat CARP_DATA_FORMAT =
+      DataFormat(NameSpace.CARP, MovisensSamplingPackage.MOVISENS);
   DataFormat get format => CARP_DATA_FORMAT;
-
 
   String movisensTimestamp;
 
@@ -42,6 +41,11 @@ class MovisensDatum extends CARPDatum {
 class MovisensMETLevelDatum extends MovisensDatum {
   MovisensMETLevelDatum() : super();
 
+  ///Data Format
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.metLevel');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensMETLevelDatum.fromMap(String value) {
     MovisensMETLevelDatum metLevelDatum = MovisensMETLevelDatum();
     Map<dynamic, dynamic> map = jsonDecode(value);
@@ -74,6 +78,10 @@ class MovisensMovementAccelerationDatum extends MovisensDatum {
 
   MovisensMovementAccelerationDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(NameSpace.CARP,
+      '${MovisensSamplingPackage.MOVISENS}.movementAcceleration');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensMovementAccelerationDatum.fromMap(String value) {
     MovisensMovementAccelerationDatum movementAccelerationDatum =
         MovisensMovementAccelerationDatum();
@@ -98,6 +106,10 @@ class MovisensTapMarkerDatum extends MovisensDatum {
 
   MovisensTapMarkerDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.tapMarker');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensTapMarkerDatum.fromMap(String value) {
     MovisensTapMarkerDatum tapMakerDatum = MovisensTapMarkerDatum();
     Map<dynamic, dynamic> map = jsonDecode(value);
@@ -118,6 +130,10 @@ class MovisensBatteryLevelDatum extends MovisensDatum {
 
   MovisensBatteryLevelDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.batteryLevel');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensBatteryLevelDatum.fromMap(String value) {
     MovisensBatteryLevelDatum batteryLevelDatum = MovisensBatteryLevelDatum();
     Map<dynamic, dynamic> map = jsonDecode(value);
@@ -136,6 +152,10 @@ class MovisensBodyPositionDatum extends MovisensDatum {
   String bodyPosition;
 
   MovisensBodyPositionDatum() : super();
+
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.bodyPosition');
+  DataFormat get format => CARP_DATA_FORMAT;
 
   factory MovisensBodyPositionDatum.fromMap(String value) {
     MovisensBodyPositionDatum bodyPositionDatum = MovisensBodyPositionDatum();
@@ -156,6 +176,10 @@ class MovisensMETDatum extends MovisensDatum {
 
   MovisensMETDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT =
+      DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.met');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensMETDatum.fromMap(String value) {
     MovisensMETDatum metDatum = MovisensMETDatum();
     Map<dynamic, dynamic> map = jsonDecode(value);
@@ -174,6 +198,10 @@ class MovisensHRDatum extends MovisensDatum {
   String hr;
 
   MovisensHRDatum() : super();
+
+  static const DataFormat CARP_DATA_FORMAT =
+      DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.hr');
+  DataFormat get format => CARP_DATA_FORMAT;
 
   factory MovisensHRDatum.fromMap(String value) {
     MovisensHRDatum hrDatum = MovisensHRDatum();
@@ -196,6 +224,10 @@ class MovisensHRVDatum extends MovisensDatum {
 
   MovisensHRVDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT =
+      DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.hrv');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensHRVDatum.fromMap(String value) {
     MovisensHRVDatum hrvDatum = MovisensHRVDatum();
 
@@ -216,6 +248,10 @@ class MovisensIsHrvValidDatum extends MovisensDatum {
 
   MovisensIsHrvValidDatum() : super();
 
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.isHrvValid');
+  DataFormat get format => CARP_DATA_FORMAT;
+
   factory MovisensIsHrvValidDatum.fromMap(String value) {
     MovisensIsHrvValidDatum isHrvValidDatum = MovisensIsHrvValidDatum();
     Map<dynamic, dynamic> map = jsonDecode(value);
@@ -234,6 +270,9 @@ class MovisensStepCountDatum extends MovisensDatum {
   String stepCount;
 
   MovisensStepCountDatum() : super();
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.stepCount');
+  DataFormat get format => CARP_DATA_FORMAT;
 
   factory MovisensStepCountDatum.fromMap(String value) {
     MovisensStepCountDatum stepCountDatum = MovisensStepCountDatum();
@@ -254,6 +293,10 @@ class MovisensConnectionStatusDatum extends MovisensDatum {
   String connectionStatus;
 
   MovisensConnectionStatusDatum() : super();
+
+  static const DataFormat CARP_DATA_FORMAT = DataFormat(
+      NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.connectionStatus');
+  DataFormat get format => CARP_DATA_FORMAT;
 
   factory MovisensConnectionStatusDatum.fromMap(String value) {
     MovisensConnectionStatusDatum connectionStatusDatum =
