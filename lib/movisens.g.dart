@@ -22,12 +22,13 @@ MovisensMeasure _$MovisensMeasureFromJson(Map<String, dynamic> json) {
       weight: json['weight'] as int,
       age: json['age'] as int)
     ..c__ = json['c__'] as String
-    ..configuration = (json['configuration'] as Map<String, dynamic>)
-        ?.map((k, e) => MapEntry(k, e as String));
+    ..configuration = (json['configuration'] as Map<String, dynamic>)?.map(
+      (k, e) => MapEntry(k, e as String),
+    );
 }
 
 Map<String, dynamic> _$MovisensMeasureToJson(MovisensMeasure instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -100,7 +101,7 @@ MovisensDatum _$MovisensDatumFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$MovisensDatumToJson(MovisensDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -130,7 +131,7 @@ MovisensMETLevelDatum _$MovisensMETLevelDatumFromJson(
 
 Map<String, dynamic> _$MovisensMETLevelDatumToJson(
     MovisensMETLevelDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -161,7 +162,7 @@ MovisensMovementAccelerationDatum _$MovisensMovementAccelerationDatumFromJson(
 
 Map<String, dynamic> _$MovisensMovementAccelerationDatumToJson(
     MovisensMovementAccelerationDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -189,7 +190,7 @@ MovisensTapMarkerDatum _$MovisensTapMarkerDatumFromJson(
 
 Map<String, dynamic> _$MovisensTapMarkerDatumToJson(
     MovisensTapMarkerDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -217,7 +218,7 @@ MovisensBatteryLevelDatum _$MovisensBatteryLevelDatumFromJson(
 
 Map<String, dynamic> _$MovisensBatteryLevelDatumToJson(
     MovisensBatteryLevelDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -245,7 +246,7 @@ MovisensBodyPositionDatum _$MovisensBodyPositionDatumFromJson(
 
 Map<String, dynamic> _$MovisensBodyPositionDatumToJson(
     MovisensBodyPositionDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -271,7 +272,7 @@ MovisensMETDatum _$MovisensMETDatumFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$MovisensMETDatumToJson(MovisensMETDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -297,7 +298,7 @@ MovisensHRDatum _$MovisensHRDatumFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$MovisensHRDatumToJson(MovisensHRDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -323,7 +324,7 @@ MovisensHRVDatum _$MovisensHRVDatumFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$MovisensHRVDatumToJson(MovisensHRVDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -351,7 +352,7 @@ MovisensIsHrvValidDatum _$MovisensIsHrvValidDatumFromJson(
 
 Map<String, dynamic> _$MovisensIsHrvValidDatumToJson(
     MovisensIsHrvValidDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -379,7 +380,7 @@ MovisensStepCountDatum _$MovisensStepCountDatumFromJson(
 
 Map<String, dynamic> _$MovisensStepCountDatumToJson(
     MovisensStepCountDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -407,7 +408,7 @@ MovisensConnectionStatusDatum _$MovisensConnectionStatusDatumFromJson(
 
 Map<String, dynamic> _$MovisensConnectionStatusDatumToJson(
     MovisensConnectionStatusDatum instance) {
-  var val = <String, dynamic>{};
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
