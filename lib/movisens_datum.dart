@@ -1,5 +1,7 @@
 part of movisens;
 
+///movisensDatum  which  serializes movisens data into CARPDatum
+
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensDatum extends CARPDatum {
   static const DataFormat CARP_DATA_FORMAT =
@@ -37,11 +39,12 @@ class MovisensDatum extends CARPDatum {
   }
 }
 
+/// MovisensMETLevelDatum
 @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class MovisensMETLevelDatum extends MovisensDatum {
   MovisensMETLevelDatum() : super();
 
-  ///Data Format
+  ///set data format
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.metLevel');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -78,6 +81,8 @@ class MovisensMovementAccelerationDatum extends MovisensDatum {
 
   MovisensMovementAccelerationDatum() : super();
 
+  ///set data format
+
   static const DataFormat CARP_DATA_FORMAT = DataFormat(NameSpace.CARP,
       '${MovisensSamplingPackage.MOVISENS}.movementAcceleration');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -106,6 +111,8 @@ class MovisensTapMarkerDatum extends MovisensDatum {
 
   MovisensTapMarkerDatum() : super();
 
+  ///set data format
+
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.tapMarker');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -130,6 +137,8 @@ class MovisensBatteryLevelDatum extends MovisensDatum {
 
   MovisensBatteryLevelDatum() : super();
 
+
+  ///set data format
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.batteryLevel');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -152,6 +161,9 @@ class MovisensBodyPositionDatum extends MovisensDatum {
   String bodyPosition;
 
   MovisensBodyPositionDatum() : super();
+
+
+  ///set data format
 
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.bodyPosition');
@@ -176,6 +188,8 @@ class MovisensMETDatum extends MovisensDatum {
 
   MovisensMETDatum() : super();
 
+  ///set data format
+
   static const DataFormat CARP_DATA_FORMAT =
       DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.met');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -198,6 +212,8 @@ class MovisensHRDatum extends MovisensDatum {
   String hr;
 
   MovisensHRDatum() : super();
+
+  ///set data format
 
   static const DataFormat CARP_DATA_FORMAT =
       DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.hr');
@@ -224,6 +240,8 @@ class MovisensHRVDatum extends MovisensDatum {
 
   MovisensHRVDatum() : super();
 
+  ///set data format
+
   static const DataFormat CARP_DATA_FORMAT =
       DataFormat(NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.hrv');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -248,6 +266,8 @@ class MovisensIsHrvValidDatum extends MovisensDatum {
 
   MovisensIsHrvValidDatum() : super();
 
+  ///set data format
+
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.isHrvValid');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -270,6 +290,8 @@ class MovisensStepCountDatum extends MovisensDatum {
   String stepCount;
 
   MovisensStepCountDatum() : super();
+
+  ///set data format
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.stepCount');
   DataFormat get format => CARP_DATA_FORMAT;
@@ -293,6 +315,10 @@ class MovisensConnectionStatusDatum extends MovisensDatum {
   String connectionStatus;
 
   MovisensConnectionStatusDatum() : super();
+
+
+
+  ///set data format
 
   static const DataFormat CARP_DATA_FORMAT = DataFormat(
       NameSpace.CARP, '${MovisensSamplingPackage.MOVISENS}.connectionStatus');

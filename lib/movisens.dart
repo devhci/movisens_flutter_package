@@ -1,5 +1,8 @@
 library movisens;
 
+
+/// tThis is the main library  for CARP movisens package
+
 import 'dart:convert';
 
 import 'dart:async';

@@ -1,6 +1,6 @@
 part of movisens;
 
-/// A Calculator.
+/// movisens sampling package
 class MovisensSamplingPackage implements SamplingPackage {
   static const String MOVISENS = "movisens";
 
